@@ -1,24 +1,17 @@
-.text-center{
-    text-align:center;
+function appendToDisplay(value) {
+    document.getElementById("display").value += value;
 }
-.mx-auto{
-    margin: auto;
+
+function clearDisplay() {
+    document.getElementById("display").value = "";
 }
-.m-w-30{
-    max-width: 20vw;
-}
-.flex{
-    display:flex;
-}
-.flex-column{
-    flex-direction:column;
-}
-.row{
-    margin:20px;
-}
-.row input{
-    margin:2px;
-    padding:10px;
-    border:2px solid black;
-    border-radius:10px;
+
+function calculate() {
+    let expression = document.getElementById("display").value;
+    try {
+        let result = eval(expression);
+        document.getElementById("display").value = result;
+    } catch (error) {
+        document.getElementById("display").value = "Error";
+    }
 }
